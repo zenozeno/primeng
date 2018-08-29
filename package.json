@@ -1,18 +1,27 @@
 {
-  "name": "primeng",
+  "name": "primeng-ixxus-patch",
   "version": "5.2.4",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-components": "ngc -p tsconfig-release.json",
+    "build-assets": "gulp build-assets",
+    "build-exports": "gulp build-exports",
+    "build-styles": "node-sass src/assets/components -o src/assets/components",
+    "build-redistribute": "npm run clean && npm run build-components && npm run build-assets && npm run build-styles && npm run build-exports",
+    "clean": "gulp clean",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "publishConfig": {
+    "registry": "https://inexus.ixxus.co.uk/repository/npm-private/"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/primefaces/primeng.git"
+    "url": "https://github.com/zenozeno/primeng.git"
   },
   "devDependencies": {
     "@angular/animations": "^5.0.0",
@@ -30,6 +39,7 @@
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "node-sass": "^4.5.3",
     "chart.js": "2.7.1",
     "codelyzer": "^4.0.1",
     "core-js": "^2.4.1",

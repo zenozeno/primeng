@@ -61,3 +61,19 @@ Configure required styles at the styles section, example below uses the Omega th
 ```
 
 That is all, you may now import PrimeNG components, for a working example visit the [PrimeNG CLI QuickStart sample](https://github.com/primefaces/primeng-quickstart-cli) at GitHub.
+
+
+#### Build & Deploy Process
+
+1) Build the project
+
+```
+npm run build-redistribute
+```
+
+2) Publish the npm package
+
+```
+cd publish
+npm publish
+```
